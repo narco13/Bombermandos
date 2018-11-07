@@ -52,7 +52,7 @@ public class Main extends javax.swing.JFrame {
                 //}
                 
             
-                //>>> Map.Update();  (à créerpar équipe Graphisme)
+                //>>> Map.Update(Moi,Adversaires,Projectiles,Bonus);  (à créer par équipe Graphisme)
             
             
             //fin de boucle infinie
@@ -70,7 +70,7 @@ public class Main extends javax.swing.JFrame {
     }; 
     
     public Main(String args[]) {
-        
+        // initialisation
         System.out.println("Main lancé! Argument reçu: ID ="+args[0]);
         ID = parseInt(args[0]);
         Moi.setId(ID);
@@ -78,7 +78,9 @@ public class Main extends javax.swing.JFrame {
         
         initComponents();
         Thread tache = new Thread(code);
-        tache.start();
+        
+        
+        tache.start(); // lancement de la boucle infinie
         
     }
 

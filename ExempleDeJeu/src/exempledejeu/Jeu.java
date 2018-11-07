@@ -85,9 +85,7 @@ public class Jeu {
             
         }
     }
-    tdgifbjxdfnikjhnbdgxsgb
-            uytrfytgfyh
-            uyguyhkgfk
+
 
     public void setGauche(boolean gauche) {
         this.gauche = gauche;
