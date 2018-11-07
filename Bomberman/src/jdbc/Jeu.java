@@ -24,7 +24,7 @@ import javax.imageio.ImageIO;
  */
 public class Jeu {
 
-    private BufferedImage nyancat, fond, spritegauche, spritedroite, spritebas, mur;
+    private BufferedImage nyancat, fond, spritegauche, spritedroite, spritebas, mur, spritehaut;
     private Joueur Moi;
 
     public Jeu(Joueur moi) {
@@ -33,6 +33,7 @@ public class Jeu {
             this.nyancat = ImageIO.read(new File("nyancat.png"));
             this.spritegauche = ImageIO.read(new File("SpriteVersGauche.png"));
             this.spritedroite = ImageIO.read(new File("SpriteVersDroite.png"));
+            this.spritehaut = ImageIO.read(new File("SpriteVersHaut.png"));
             this.spritebas = ImageIO.read(new File("SpriteVersBas.png"));
             this.mur = ImageIO.read(new File("mur.jpg"));
             this.Moi= moi;
@@ -48,19 +49,25 @@ public class Jeu {
 
     public void Afficher(Graphics2D contexte) {
         int x = this.Moi.getX();
-        
+        int y = this.Moi.getY();
         for (int i=0; i<=20; i++){
             for (int j=0; j<=20; j++){
                 contexte.drawImage(this.fond, 0+30*i, 0+30*j, null);
             }
         }
-        contexte.drawImage(this.spritebas, x, 150, null);
+        contexte.drawImage(this.spritebas, x, y, null);
         if (this.Moi.getDirection()==4){    
-        contexte.drawImage(this.spritegauche, x, 150, null);
+        contexte.drawImage(this.spritegauche, x, y, null);
         }
         
         if (this.Moi.getDirection()==2){    
-        contexte.drawImage(this.spritedroite, x, 150, null);
+        contexte.drawImage(this.spritedroite, x, y, null);
+        }
+        if (this.Moi.getDirection()==1){    
+        contexte.drawImage(this.spritebas, x, y, null);
+        }
+        if (this.Moi.getDirection()==3){    
+        contexte.drawImage(this.spritehaut, x, y, null);
         }
          for (int i=0; i<=20; i++){
         
