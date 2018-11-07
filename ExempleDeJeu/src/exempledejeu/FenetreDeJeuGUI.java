@@ -12,12 +12,11 @@ import javax.swing.Timer;
  *
  * @author guillaume.laurent
  */
-public class FenetreDeJeuGUI extends javax.swing.JFrame implements ActionListener {
+public class FenetreDeJeuGUI extends javax.swing.JFrame {
 
     private BufferedImage buffer;
     private Graphics2D contexteBuffer;
     private Jeu jeu;
-    private Timer timer;
 
     /**
      * Creates new form NewJFrame
@@ -33,14 +32,10 @@ public class FenetreDeJeuGUI extends javax.swing.JFrame implements ActionListene
         jLabel1.setIcon(new ImageIcon(this.buffer));
         this.contexteBuffer = this.buffer.createGraphics();
 
-        // Creation du Timer qui appelle this.actionPerformed() tous les 40 ms
-        this.timer = new Timer(40, this);
-        this.timer.start();
     }
 
-    // Methode appelee par le timer et qui contient la boucle de jeu
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    
+    public void Update() {
         this.jeu.MettreAJour();
         this.jeu.Afficher(contexteBuffer);
         this.jLabel1.repaint();
@@ -91,21 +86,11 @@ public class FenetreDeJeuGUI extends javax.swing.JFrame implements ActionListene
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        if (evt.getKeyCode() == evt.VK_RIGHT) {
-            this.jeu.setDroite(true);
-        }
-        if (evt.getKeyCode() == evt.VK_LEFT) {
-            this.jeu.setGauche(true);
-        }
+
     }//GEN-LAST:event_formKeyPressed
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
-        if (evt.getKeyCode() == evt.VK_RIGHT) {
-            this.jeu.setDroite(false);
-        }
-        if (evt.getKeyCode() == evt.VK_LEFT) {
-            this.jeu.setGauche(false);
-        }
+
     }//GEN-LAST:event_formKeyReleased
 
     /**

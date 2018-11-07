@@ -25,10 +25,9 @@ import javax.imageio.ImageIO;
 public class Jeu {
 
     private BufferedImage nyancat, fond, spritegauche, spritedroite, spritebas, mur;
-    private int x;
-    private boolean gauche, droite;
+    private Joueur Moi;
 
-    public Jeu() {
+    public Jeu(Joueur moi) {
         try {
             this.fond = ImageIO.read(new File("fond.jpg"));
             this.nyancat = ImageIO.read(new File("nyancat.png"));
@@ -36,41 +35,27 @@ public class Jeu {
             this.spritedroite = ImageIO.read(new File("SpriteVersDroite.png"));
             this.spritebas = ImageIO.read(new File("SpriteVersBas.png"));
             this.mur = ImageIO.read(new File("mur.jpg"));
+            this.Moi= moi;
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.x = 100;
-        this.gauche = false;
-        this.droite = false;
     }
 
-    public void MettreAJour() {
-        if (this.gauche) {
-            x -= 5;
-        }
-        if (this.droite) {
-            x += 5;
-        }
-        if (x > 50*this.fond.getWidth() - this.nyancat.getWidth()) {
-            x = 50*this.fond.getWidth() - this.nyancat.getWidth();
-        }
-        if (x < 0) {
-            x = 0;
-        }
-    }
 
     public void Afficher(Graphics2D contexte) {
+        int x = this.Moi.getX();
+        
         for (int i=0; i<=20; i++){
             for (int j=0; j<=20; j++){
                 contexte.drawImage(this.fond, 0+30*i, 0+30*j, null);
             }
         }
         contexte.drawImage(this.spritebas, x, 150, null);
-        if (this.gauche){    
+        if (this.Moi.getDirection()==4){    
         contexte.drawImage(this.spritegauche, x, 150, null);
         }
         
-        if (this.droite){    
+        if (this.Moi.getDirection()==2){    
         contexte.drawImage(this.spritedroite, x, 150, null);
         }
          for (int i=0; i<=20; i++){
@@ -96,13 +81,6 @@ public class Jeu {
     }
 
 
-    public void setGauche(boolean gauche) {
-        this.gauche = gauche;
-    }
-
-    public void setDroite(boolean droite) {
-        this.droite = droite;
-    }
 
 }
 
