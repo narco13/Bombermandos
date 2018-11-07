@@ -22,16 +22,16 @@ public class Projectile {
 
     
     /*constructeur*/
-    public Projectile(int id, String pseudo, int x, int y, int pv, String Arme, int direction, int etat, int munition) {
-        //this.id = id;
-        //this.pseudo = pseudo;
-        //this.x = x;
-        //this.y = y;
-        //this.pv = pv;
-        //this.arme = Arme;
-        //this.direction = direction;
-        //this.etat = etat;
-        //this.munition = munition;
+    public Projectile(String type, int x, int y, int vitessex, int vitessey, int hauteur, int largeur, int numero_lanceur) {
+        this.type = type;
+        this.x = x;
+        this.y = y;
+        this.vitessex = vitessex;
+        this.vitessey = vitessey;
+        this.hauteur = hauteur;
+        this.largeur = largeur;
+        this.numero_lanceur = numero_lanceur;
+
     }
     
 }

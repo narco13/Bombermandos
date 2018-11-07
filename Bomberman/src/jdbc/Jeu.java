@@ -40,6 +40,10 @@ public class Jeu {
             java.util.logging.Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void Update(Joueur Moi){
+        this.Moi = Moi;
+    }
 
 
     public void Afficher(Graphics2D contexte) {

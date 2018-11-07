@@ -59,6 +59,7 @@ public class Main extends javax.swing.JFrame {
                 
             
                 //>>> Map.Update(Moi,Adversaires,Projectiles,Bonus);  (à créer par équipe Graphisme)
+                jeu.Update(Moi);
                 jeu.Afficher(contexteBuffer);
                 jLabel1.repaint();
             
