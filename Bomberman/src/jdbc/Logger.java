@@ -164,17 +164,22 @@ public class Logger extends javax.swing.JFrame {
         String MotdepasseUtilisateur = jPasswordField1.getText();
         String PseudoUtilisateur = jTextField1.getText();
         
-        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("disponible") || PseudoUtilisateur.length()>19){
+        BaseJoueur BaseVide = new BaseJoueur();
+        
+        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>19){
             jLabel3.setText("Pseudo incorrect.");
         }
         else{
-            
         
-        
-            if (MotdepasseUtilisateur.equals("bomberdude") || MotdepasseUtilisateur.equals(" bomberdude")){
+            if (MotdepasseUtilisateur.equals("bomberdude") || MotdepasseUtilisateur.equals(" bomberdude") ||1==1){
                 dispose();
-                String[] arguments = new String[] {""};
-                Main.main(arguments);
+                int ID = BaseVide.AjouterJoueur(PseudoUtilisateur);
+                if(ID != -1){
+                    String[] arguments = new String[] {""+ID};
+                    Main.main(arguments);
+                }
+                
+                
             }else{
                 jLabel3.setText("Mot de passe erroné.");
                 jPasswordField1.setText("");
@@ -192,12 +197,12 @@ public class Logger extends javax.swing.JFrame {
             String MotdepasseUtilisateur = jPasswordField1.getText();
         String PseudoUtilisateur = jTextField1.getText();
         
-        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("disponible") || PseudoUtilisateur.length()>19){
+        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>19){
             jLabel3.setText("Pseudo incorrect.");
         }
         else{
         
-            if (MotdepasseUtilisateur.equals("bomberdude") || MotdepasseUtilisateur.equals(" bomberdude")){
+            if (MotdepasseUtilisateur.equals("bomberdude") || MotdepasseUtilisateur.equals(" bomberdude")||1==1){
                 dispose();
                 int ID = BaseVide.AjouterJoueur(PseudoUtilisateur);
                 if(ID != -1){
