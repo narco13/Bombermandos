@@ -189,6 +189,7 @@ public class Joueur {
             requete.setInt(8,this.munition );
             requete.setInt(9,this.id);
 
+            System.out.println(requete);
             requete.executeUpdate();
 
             requete.close();
