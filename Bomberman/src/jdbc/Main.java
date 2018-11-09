@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
     
     public static int ID;
     public static Joueur Moi=new Joueur(0,"erreur",1,1,1,"cut",1,1,1);
-    public static BaseJoueur Adversaires=new BaseJoueur();
+    public static BaseJoueur Adversaires = new BaseJoueur();
     private BufferedImage buffer;
     private Graphics2D contexteBuffer;
     private Jeu jeu;
@@ -82,8 +82,11 @@ public class Main extends javax.swing.JFrame {
         // initialisation
         System.out.println("Main lancé! Argument reçu: ID ="+args[0]);
         ID = parseInt(args[0]);
+        
         Moi.setId(ID);
+        
         Adversaires.InitBaseAdversaires(ID);
+        
         
         
         
@@ -151,12 +154,24 @@ public class Main extends javax.swing.JFrame {
     private void jLabel1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel1KeyPressed
         // TODO add your handling code here:
         
-        
     }//GEN-LAST:event_jLabel1KeyPressed
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
-        
+
+        if(evt.getKeyCode() == evt.VK_RIGHT){
+            Moi.deplacerDroite();
+        }
+        if(evt.getKeyCode() == evt.VK_LEFT){
+            Moi.deplacerGauche();
+        }
+        if(evt.getKeyCode() == evt.VK_UP){
+            Moi.deplacerHaut();
+        }
+        if(evt.getKeyCode() == evt.VK_DOWN){
+            Moi.deplacerBas();
+        }
+
         
     }//GEN-LAST:event_formKeyPressed
 

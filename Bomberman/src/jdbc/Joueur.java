@@ -19,15 +19,15 @@ import java.sql.SQLException;
  * @author Arthur
  */
 public class Joueur {
-    private static int id;
-    private static String pseudo;
-    private static int x;
-    private static int y;
-    private static int pv;
-    private static String arme;
-    private static int direction;
-    private static int etat;
-    private static int munition;
+    private int id;
+    private String pseudo;
+    private int x;
+    private int y;
+    private int pv;
+    private String arme;
+    private int direction;
+    private int etat;
+    private int munition;
 
     /*constructeur*/
     public Joueur(int id, String pseudo, int x, int y, int pv, String Arme, int direction, int etat, int munition) {
@@ -155,21 +155,21 @@ public class Joueur {
         this.pv = 5;
     }
     
-     public void deplacerEst(){
-        this.x = this.x +1;
-        this.direction = 1;
-    }
-    public void deplacerOuest(){
-        this.x=this.x+1;
+     public void deplacerDroite(){
+        this.x = this.x +5;
         this.direction = 2;
     }
+    public void deplacerGauche(){
+        this.x=this.x -5;
+        this.direction = 4;
+    }
     public void deplacerHaut(){
-        this.y= this.y-1;
+        this.y= this.y-5;
         this.direction = 3;
     }      
     public void deplacerBas(){
-        this.y= this.y+1;
-        this.direction = 4;
+        this.y= this.y+5;
+        this.direction = 1;
     }
     
     public void Push(){
@@ -189,7 +189,7 @@ public class Joueur {
             requete.setInt(8,this.munition );
             requete.setInt(9,this.id);
 
-            System.out.println(requete);
+            //System.out.println(requete);
             requete.executeUpdate();
 
             requete.close();

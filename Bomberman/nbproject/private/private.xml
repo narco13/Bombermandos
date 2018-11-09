@@ -6,10 +6,15 @@
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Main.java</file>
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Joueur.java</file>
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Jeu.java</file>
+<<<<<<< HEAD
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/BaseJoueur.java</file>
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Liste_Projectiles.java</file>
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Logger.java</file>
             <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Projectile.java</file>
+=======
+            <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Joueur.java</file>
+            <file>file:/Z:/Bureau/Bomberman/Bombermandos/Bomberman/src/jdbc/Main.java</file>
+>>>>>>> 0c4f45dd0888aea4385d4db27456803fedfaaf62
         </group>
     </open-files>
 </project-private>
