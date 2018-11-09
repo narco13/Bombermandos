@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import javax.imageio.ImageIO;
+import static jdbc.Main.Adversaires;
 
 /**
  *
@@ -50,25 +51,19 @@ public class Jeu {
     public void Afficher(Graphics2D contexte) {
         int x = this.Moi.getX();
         int y = this.Moi.getY();
+        //dessiner fond
         for (int i=0; i<=20; i++){
             for (int j=0; j<=20; j++){
                 contexte.drawImage(this.fond, 0+30*i, 0+30*j, null);
             }
         }
-        contexte.drawImage(this.spritebas, x, y, null);
-        if (this.Moi.getDirection()==4){    
-        contexte.drawImage(this.spritegauche, x, y, null);
-        }
-        
-        if (this.Moi.getDirection()==2){    
-        contexte.drawImage(this.spritedroite, x, y, null);
-        }
-        if (this.Moi.getDirection()==1){    
-        contexte.drawImage(this.spritebas, x, y, null);
-        }
-        if (this.Moi.getDirection()==3){    
-        contexte.drawImage(this.spritehaut, x, y, null);
-        }
+        // dessiner un joueur
+        this.AfficherJoueur(contexte,Moi);
+        this.AfficherJoueur(contexte,Adversaires.joueur1);
+        this.AfficherJoueur(contexte,Adversaires.joueur2);
+        this.AfficherJoueur(contexte,Adversaires.joueur3);
+
+        //dessiner mur
          for (int i=0; i<=20; i++){
         
                 contexte.drawImage(this.mur, 0+30*i, 0, null);
@@ -90,7 +85,25 @@ public class Jeu {
             
         }
     }
-
+     public void AfficherJoueur(Graphics2D contexte, Joueur j1) {
+        int x = j1.getX();
+        int y = j1.getY();
+        
+        contexte.drawImage(this.spritebas, x, y, null);
+        if (j1.getDirection()==4){    
+        contexte.drawImage(this.spritegauche, x, y, null);
+        }
+        
+        if (j1.getDirection()==2){    
+        contexte.drawImage(this.spritedroite, x, y, null);
+        }
+        if (j1.getDirection()==1){    
+        contexte.drawImage(this.spritebas, x, y, null);
+        }
+        if (j1.getDirection()==3){    
+        contexte.drawImage(this.spritehaut, x, y, null);
+        }
+     }
 
 
 }
