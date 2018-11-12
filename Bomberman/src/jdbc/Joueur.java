@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -28,6 +29,8 @@ public class Joueur {
     private int direction;
     private int etat;
     private int munition;
+    private boolean collision;
+    private ArrayList<Mur> listeMur;
 
     /*constructeur*/
     public Joueur(int id, String pseudo, int x, int y, int pv, String Arme, int direction, int etat, int munition) {
@@ -40,6 +43,7 @@ public class Joueur {
         this.direction = direction;
         this.etat = etat;
         this.munition = munition;
+        this.collision = false;
     }
 
     /*setter*/
@@ -78,6 +82,12 @@ public class Joueur {
     public void setMunition(int munition) {
         this.munition = munition;
     }
+    
+    public void setCollision(boolean collision){
+        this.collision = collision;
+    }
+    
+    /* getters */
 
     public int getId() {
         return id;
@@ -115,6 +125,9 @@ public class Joueur {
         return munition;
     }
     
+    public boolean getCollision() {
+        return collision;
+    }
     
     //constructeur pour chaque joueur     
     
@@ -171,6 +184,11 @@ public class Joueur {
         this.y= this.y+5;
         this.direction = 1;
     }
+    
+    public void doCollision {
+        for(i = 0; i = length)
+    }
+    
     
     public void Push(){
         
