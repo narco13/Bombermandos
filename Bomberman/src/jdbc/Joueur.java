@@ -14,6 +14,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import static jdbc.Main.Adversaires;
+import static jdbc.Main.hauteurPersos;
+import static jdbc.Main.largeurPersos;
 
 /**
  *
@@ -31,6 +34,7 @@ public class Joueur {
     private int munition;
     private boolean collision;
     private ArrayList<Mur> listeMur;
+    
 
     /*constructeur*/
     public Joueur(int id, String pseudo, int x, int y, int pv, String Arme, int direction, int etat, int munition) {
@@ -45,6 +49,8 @@ public class Joueur {
         this.munition = munition;
         this.collision = false;
     }
+    
+    
 
     /*setter*/
     public void setId(int id) {
@@ -188,6 +194,22 @@ public class Joueur {
     /*public void doCollision {
         for(i = 0; i = length)
     } */
+    
+    public boolean EstOccupee(int x, int y){
+        boolean estoccupee = false;
+        
+        if (Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getY()-hauteurPersos<y && Adversaires.joueur1.getY()-hauteurPersos>y){
+            estoccupee = true;
+        }
+        if (Adversaires.joueur2.getX()-largeurPersos<x && Adversaires.joueur2.getX()+largeurPersos>x && Adversaires.joueur2.getY()-hauteurPersos<y && Adversaires.joueur2.getY()-hauteurPersos>y){
+            estoccupee = true;
+        }
+        if (Adversaires.joueur3.getX()-largeurPersos<x && Adversaires.joueur3.getX()+largeurPersos>x && Adversaires.joueur3.getY()-hauteurPersos<y && Adversaires.joueur3.getY()-hauteurPersos>y){
+            estoccupee = true;
+        }
+        
+        return estoccupee;
+    }
     
     
     public void Push(){
