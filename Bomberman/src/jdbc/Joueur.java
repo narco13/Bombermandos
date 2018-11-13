@@ -196,14 +196,15 @@ public class Joueur {
     } */
     
     public boolean EstOccupee(int x, int y){
-        boolean estoccupee = false;
+         boolean estoccupee;
         
-        if (Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getY()-hauteurPersos<y && Adversaires.joueur1.getY()-hauteurPersos>y){
-            estoccupee = true;
-        }
+        System.out.println("" + (Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getY()+hauteurPersos>y && Adversaires.joueur1.getY()-hauteurPersos<y));
+        estoccupee = Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getY()+hauteurPersos>y && Adversaires.joueur1.getY()-hauteurPersos<y;
+
         if (Adversaires.joueur2.getX()-largeurPersos<x && Adversaires.joueur2.getX()+largeurPersos>x && Adversaires.joueur2.getY()-hauteurPersos<y && Adversaires.joueur2.getY()-hauteurPersos>y){
             estoccupee = true;
         }
+        
         if (Adversaires.joueur3.getX()-largeurPersos<x && Adversaires.joueur3.getX()+largeurPersos>x && Adversaires.joueur3.getY()-hauteurPersos<y && Adversaires.joueur3.getY()-hauteurPersos>y){
             estoccupee = true;
         }

@@ -60,5 +60,14 @@ public class Mur {
         this.y2 = y2;
     }
     
+    public boolean Contient(int x, int y){
+        boolean Estdedans = false;
+        
+        if (this.x1 < x && this.x2 > x && this.y1 < y && this.y2 > y){
+            Estdedans=true;
+        }
+        
+        return Estdedans;
+    }
             
 }
