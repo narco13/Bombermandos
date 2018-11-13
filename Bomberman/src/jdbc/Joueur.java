@@ -185,9 +185,9 @@ public class Joueur {
         this.direction = 1;
     }
     
-    public void doCollision {
+    /*public void doCollision {
         for(i = 0; i = length)
-    }
+    } */
     
     
     public void Push(){
