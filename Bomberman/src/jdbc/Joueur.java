@@ -33,7 +33,6 @@ public class Joueur {
     private int etat;
     private int munition;
     private boolean collision;
-    private ArrayList<Mur> listeMur;
     
 
     /*constructeur*/
@@ -47,7 +46,6 @@ public class Joueur {
         this.direction = direction;
         this.etat = etat;
         this.munition = munition;
-        this.collision = false;
     }
     
     
@@ -89,9 +87,6 @@ public class Joueur {
         this.munition = munition;
     }
     
-    public void setCollision(boolean collision){
-        this.collision = collision;
-    }
     
     /* getters */
 
@@ -131,9 +126,6 @@ public class Joueur {
         return munition;
     }
     
-    public boolean getCollision() {
-        return collision;
-    }
     
     //constructeur pour chaque joueur     
     
@@ -190,10 +182,6 @@ public class Joueur {
         this.y= this.y+5;
         this.direction = 1;
     }
-    
-    /*public void doCollision {
-        for(i = 0; i = length)
-    } */
     
     public boolean EstOccupee(int x, int y){
          boolean estoccupee;

@@ -178,13 +178,13 @@ public class Main extends javax.swing.JFrame {
             }
             Moi.deplacerDroite();
         }
-        if(evt.getKeyCode() == evt.VK_LEFT){
+        if(evt.getKeyCode() == evt.VK_LEFT && !Moi.EstOccupee(Moi.getX()-5, Moi.getY())){
             Moi.deplacerGauche();
         }
-        if(evt.getKeyCode() == evt.VK_UP){
+        if(evt.getKeyCode() == evt.VK_UP && !Moi.EstOccupee(Moi.getX(), Moi.getY()-5)){
             Moi.deplacerHaut();
         }
-        if(evt.getKeyCode() == evt.VK_DOWN){
+        if(evt.getKeyCode() == evt.VK_DOWN && !Moi.EstOccupee(Moi.getX(), Moi.getY()+5)){
             Moi.deplacerBas();
         }
 
