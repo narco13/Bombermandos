@@ -167,33 +167,52 @@ public class Joueur {
     }
     
      public void deplacerDroite(){
-        this.x = this.x +5;
+         
+        if (this.EstOccupee(this.x+5, this.y)==false){
+            this.x = this.x +5;
+        }
+        
         this.direction = 2;
     }
+     
     public void deplacerGauche(){
-        this.x=this.x -5;
+        
+        if (this.EstOccupee(this.x-5, this.y)==false){
+            this.x=this.x -5;       
+        }
         this.direction = 4;
+
     }
+    
     public void deplacerHaut(){
-        this.y= this.y-5;
+        
+        if (this.EstOccupee(this.x, this.y-5)==false){
+            this.y= this.y-5;
+        }
+        
         this.direction = 3;
     }      
+    
     public void deplacerBas(){
-        this.y= this.y+5;
+        
+        if (this.EstOccupee(this.x, this.y+5)==false){
+            this.y= this.y+5;
+        }
         this.direction = 1;
+        
     }
     
     public boolean EstOccupee(int x, int y){
          boolean estoccupee;
         
-        System.out.println("" + (Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getY()+hauteurPersos>y && Adversaires.joueur1.getY()-hauteurPersos<y));
+        
         estoccupee = Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getY()+hauteurPersos>y && Adversaires.joueur1.getY()-hauteurPersos<y;
 
-        if (Adversaires.joueur2.getX()-largeurPersos<x && Adversaires.joueur2.getX()+largeurPersos>x && Adversaires.joueur2.getY()-hauteurPersos<y && Adversaires.joueur2.getY()-hauteurPersos>y){
+        if (Adversaires.joueur2.getX()+largeurPersos>x && Adversaires.joueur2.getX()-largeurPersos<x && Adversaires.joueur2.getY()+hauteurPersos>y && Adversaires.joueur2.getY()-hauteurPersos<y){
             estoccupee = true;
         }
         
-        if (Adversaires.joueur3.getX()-largeurPersos<x && Adversaires.joueur3.getX()+largeurPersos>x && Adversaires.joueur3.getY()-hauteurPersos<y && Adversaires.joueur3.getY()-hauteurPersos>y){
+        if (Adversaires.joueur3.getX()+largeurPersos>x && Adversaires.joueur3.getX()-largeurPersos<x && Adversaires.joueur3.getY()+hauteurPersos>y && Adversaires.joueur3.getY()-hauteurPersos<y){
             estoccupee = true;
         }
         

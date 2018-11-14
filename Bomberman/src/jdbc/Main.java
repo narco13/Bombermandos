@@ -167,15 +167,6 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if(evt.getKeyCode() == evt.VK_RIGHT){
-            
-            int x =Moi.getX();
-            int y = Moi.getY();
-
-            System.out.println(""+Moi.EstOccupee(x,y));
-            System.out.println(""+(Adversaires.joueur1.getX()+largeurPersos>x && Adversaires.joueur1.getX()-largeurPersos<x && Adversaires.joueur1.getY()+hauteurPersos>y && Adversaires.joueur1.getY()-hauteurPersos<y));
-            if (Moi.EstOccupee(Moi.getX(), Moi.getY())){
-                System.out.println("youpi");
-            }
             Moi.deplacerDroite();
         }
         if(evt.getKeyCode() == evt.VK_LEFT && !Moi.EstOccupee(Moi.getX()-5, Moi.getY())){
