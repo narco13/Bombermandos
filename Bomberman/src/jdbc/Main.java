@@ -289,6 +289,7 @@ public class Main extends javax.swing.JFrame {
             Projectile proj = new Projectile();
             proj.estCouteau(proj, Moi);
             Projectiles.add(proj);
+            System.out.println("Coup de couteau");
         }
 
         
