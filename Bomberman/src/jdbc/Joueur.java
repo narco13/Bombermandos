@@ -12,6 +12,7 @@ package jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import static jdbc.Main.Adversaires;
@@ -170,7 +171,7 @@ public class Joueur {
      public void deplacerDroite(){
          
         if (this.EstOccupee(this.x+5, this.y)==false){
-            this.x = this.x +5;
+            this.x = this.x +3;
         }
         
         this.direction = 2;
@@ -179,7 +180,7 @@ public class Joueur {
     public void deplacerGauche(){
         
         if (this.EstOccupee(this.x-5, this.y)==false){
-            this.x=this.x -5;       
+            this.x=this.x -3;       
         }
         this.direction = 4;
 
@@ -188,7 +189,7 @@ public class Joueur {
     public void deplacerHaut(){
         
         if (this.EstOccupee(this.x, this.y-5)==false){
-            this.y= this.y-5;
+            this.y= this.y-3;
         }
         
         this.direction = 3;
@@ -197,7 +198,7 @@ public class Joueur {
     public void deplacerBas(){
         
         if (this.EstOccupee(this.x, this.y+5)==false){
-            this.y= this.y+5;
+            this.y= this.y+3;
         }
         this.direction = 1;
         
@@ -245,6 +246,35 @@ public class Joueur {
 
             //System.out.println(requete);
             requete.executeUpdate();
+
+            requete.close();
+            connexion.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void Pull(int id){
+        
+        
+        try {
+
+            Connection connexion = DriverManager.getConnection("jdbc:mysql://nemrod.ens2m.fr:3306/20182019_s1_vs2_tp1_bomberman?serverTimezone=UTC", "tutur", "bomberman");
+
+            PreparedStatement requete = connexion.prepareStatement("SELECT pseudo, x, y, pv, arme, direction, etat, munitions FROM Joueur WHERE id ="+id);
+            ResultSet resultat = requete.executeQuery();
+            while (resultat.next()) {
+                this.setX(resultat.getInt("x"));
+                this.setY(resultat.getInt("y"));
+                this.setPv(resultat.getInt("pv"));
+                this.setArme(resultat.getString("arme"));
+                this.setDirection(resultat.getInt("direction"));
+                this.setEtat(resultat.getInt("etat"));
+                this.setMunition(resultat.getInt("munitions"));
+                
+                
+            }
 
             requete.close();
             connexion.close();

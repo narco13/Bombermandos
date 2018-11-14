@@ -22,10 +22,11 @@ public class Projectile {
     private static int hauteur;
     private static int largeur;
     private static int numero_lanceur;
+    private static long naissance;
 
     
     /*constructeur*/
-    public Projectile(String type, int x, int y, int vitessex, int vitessey, int hauteur, int largeur, int numero_lanceur) {
+    public Projectile(String type, int x, int y, int vitessex, int vitessey, int hauteur, int largeur, int numero_lanceur, long naissance) {
         this.type = type;
         this.x = x;
         this.y = y;
@@ -34,8 +35,89 @@ public class Projectile {
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.numero_lanceur = numero_lanceur;
+        this.naissance = naissance;
 
     }
+    
+    /*getters*/
+
+    public static String getType() {
+        return type;
+    }
+
+    public static int getX() {
+        return x;
+    }
+
+    public static int getY() {
+        return y;
+    }
+
+    public static int getVitessex() {
+        return vitessex;
+    }
+
+    public static int getVitessey() {
+        return vitessey;
+    }
+
+    public static int getHauteur() {
+        return hauteur;
+    }
+
+    public static int getLargeur() {
+        return largeur;
+    }
+
+    public static int getNumero_lanceur() {
+        return numero_lanceur;
+    }
+
+    public static long getNaissance() {
+        return naissance;
+    }
+    
+    
+    /*setter*/
+
+    public static void setType(String type) {
+        Projectile.type = type;
+    }
+
+    public static void setX(int x) {
+        Projectile.x = x;
+    }
+
+    public static void setY(int y) {
+        Projectile.y = y;
+    }
+
+    public static void setVitessex(int vitessex) {
+        Projectile.vitessex = vitessex;
+    }
+
+    public static void setVitessey(int vitessey) {
+        Projectile.vitessey = vitessey;
+    }
+
+    public static void setHauteur(int hauteur) {
+        Projectile.hauteur = hauteur;
+    }
+
+    public static void setLargeur(int largeur) {
+        Projectile.largeur = largeur;
+    }
+
+    public static void setNumero_lanceur(int numero_lanceur) {
+        Projectile.numero_lanceur = numero_lanceur;
+    }
+
+    public static void setNaissance(long naissance) {
+        Projectile.naissance = naissance;
+    }
+    
+    
+    
     
     public boolean TestChoc(Joueur joueur){
         boolean Choc = false;
@@ -66,6 +148,24 @@ public class Projectile {
         }
         
         return Choc;
+    }
+    
+    public Projectile Couteau(Joueur joueur){
+        Projectile couteau = new Projectile ("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),System.currentTimeMillis());
+        return couteau;
+    }
+    
+    public boolean EstPerime(){
+        boolean EstPerime =false;
+        
+        String type = this.getType();
+        
+        if (type == "Couteau"){
+            
+        }
+        
+        
+        return EstPerime;
     }
     
 }
