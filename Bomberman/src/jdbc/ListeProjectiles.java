@@ -36,6 +36,10 @@ public class ListeProjectiles {
         this.Liste.remove(proj);
     }
     
+    public void add(Projectile proj){
+        this.Liste.add(proj);
+    }
+    
     
     
     

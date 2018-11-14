@@ -285,11 +285,11 @@ public class Main extends javax.swing.JFrame {
         if(evt.getKeyCode() == evt.VK_S){
             Moi.deplacerBas();
         }
-        /*if(evt.getKeyCode() == evt.VK_RIGHT){
-            Projectiles.add(new Projectile("couteau",Moi.getX(),Moi.getY(),0,0,10,10,Moi.getId(),System.currentTimeMillis()));
-            Projectile couteau = new Projectile();
-            Projectiles.add(Projectile.Couteau());
-        }*/
+        if(evt.getKeyCode() == evt.VK_RIGHT){
+            Projectile proj = new Projectile();
+            proj.estCouteau(proj, Moi);
+            Projectiles.add(proj);
+        }
 
         
     }//GEN-LAST:event_formKeyPressed

@@ -38,6 +38,9 @@ public class Projectile {
         this.naissance = naissance;
 
     }
+
+    public Projectile() {
+    }
     
     /*getters*/
 
@@ -150,9 +153,9 @@ public class Projectile {
         return Choc;
     }
     
-    public Projectile Couteau(Joueur joueur){
-        Projectile couteau = new Projectile ("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),System.currentTimeMillis());
-        return couteau;
+    public Projectile estCouteau(Projectile proj,Joueur joueur){
+        proj = new Projectile("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),System.currentTimeMillis());
+        return proj;
     }
     
     public boolean EstPerime(){
