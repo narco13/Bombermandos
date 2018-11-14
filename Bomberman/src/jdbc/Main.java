@@ -79,7 +79,7 @@ public class Main extends javax.swing.JFrame {
             
             try {
             
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (Exception e) {
             e.printStackTrace();
             }

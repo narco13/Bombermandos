@@ -22,12 +22,11 @@ public class Projectile {
     private static int hauteur;
     private static int largeur;
     private static int numero_lanceur;
-    private static long duree_de_vie;
     private static long naissance;
 
     
     /*constructeur*/
-    public Projectile(String type, int x, int y, int vitessex, int vitessey, int hauteur, int largeur, int numero_lanceur, long duree_de_vie, long naissance) {
+    public Projectile(String type, int x, int y, int vitessex, int vitessey, int hauteur, int largeur, int numero_lanceur, long naissance) {
         this.type = type;
         this.x = x;
         this.y = y;
@@ -36,7 +35,6 @@ public class Projectile {
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.numero_lanceur = numero_lanceur;
-        this.duree_de_vie = duree_de_vie;
         this.naissance = naissance;
 
     }
@@ -73,10 +71,6 @@ public class Projectile {
 
     public static int getNumero_lanceur() {
         return numero_lanceur;
-    }
-
-    public static long getDuree_de_vie() {
-        return duree_de_vie;
     }
 
     public static long getNaissance() {
@@ -118,10 +112,6 @@ public class Projectile {
         Projectile.numero_lanceur = numero_lanceur;
     }
 
-    public static void setDuree_de_vie(long duree_de_vie) {
-        Projectile.duree_de_vie = duree_de_vie;
-    }
-
     public static void setNaissance(long naissance) {
         Projectile.naissance = naissance;
     }
@@ -161,8 +151,21 @@ public class Projectile {
     }
     
     public Projectile Couteau(Joueur joueur){
-        Projectile couteau = new Projectile ("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),25,System.currentTimeMillis());
+        Projectile couteau = new Projectile ("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),System.currentTimeMillis());
         return couteau;
+    }
+    
+    public boolean EstPerime(){
+        boolean EstPerime =false;
+        
+        String type = this.getType();
+        
+        if (type == "Couteau"){
+            
+        }
+        
+        
+        return EstPerime;
     }
     
 }
