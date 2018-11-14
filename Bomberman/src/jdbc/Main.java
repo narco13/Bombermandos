@@ -31,7 +31,8 @@ public class Main extends javax.swing.JFrame {
     private Jeu jeu;
     public static int largeurPersos=25;
     public static int hauteurPersos=40;
-
+    private Projectile Proj;
+    
     /**
      * Creates new form Main
      */
@@ -272,18 +273,23 @@ public class Main extends javax.swing.JFrame {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
 
-        if(evt.getKeyCode() == evt.VK_RIGHT){
+        if(evt.getKeyCode() == evt.VK_D){
             Moi.deplacerDroite();
         }
-        if(evt.getKeyCode() == evt.VK_LEFT && !Moi.EstOccupee(Moi.getX()-5, Moi.getY())){
+        if(evt.getKeyCode() == evt.VK_Q){
             Moi.deplacerGauche();
         }
-        if(evt.getKeyCode() == evt.VK_UP && !Moi.EstOccupee(Moi.getX(), Moi.getY()-5)){
+        if(evt.getKeyCode() == evt.VK_Z){
             Moi.deplacerHaut();
         }
-        if(evt.getKeyCode() == evt.VK_DOWN && !Moi.EstOccupee(Moi.getX(), Moi.getY()+5)){
+        if(evt.getKeyCode() == evt.VK_S){
             Moi.deplacerBas();
         }
+        /*if(evt.getKeyCode() == evt.VK_RIGHT){
+            Projectiles.add(new Projectile("couteau",Moi.getX(),Moi.getY(),0,0,10,10,Moi.getId(),System.currentTimeMillis()));
+            Projectile couteau = new Projectile();
+            Projectiles.add(Projectile.Couteau());
+        }*/
 
         
     }//GEN-LAST:event_formKeyPressed
