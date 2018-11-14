@@ -160,8 +160,9 @@ public class Projectile {
         return Choc;
     }
     
-    public void Couteau(Joueur joueur){
+    public Projectile Couteau(Joueur joueur){
         Projectile couteau = new Projectile ("couteau",joueur.getX(),joueur.getY(),0,0,10,10,joueur.getId(),25,System.currentTimeMillis());
+        return couteau;
     }
     
 }
