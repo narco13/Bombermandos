@@ -14,15 +14,15 @@ import static jdbc.Main.largeurPersos;
  */
 public class Projectile {
     
-    private static String type;
-    private static int x;
-    private static int y;
-    private static int vitessex;
-    private static int vitessey;
-    private static int hauteur;
-    private static int largeur;
-    private static int numero_lanceur;
-    private static long naissance;
+    private String type;
+    private int x;
+    private int y;
+    private int vitessex;
+    private int vitessey;
+    private int hauteur;
+    private int largeur;
+    private int numero_lanceur;
+    private long naissance;
 
     
     /*constructeur*/
@@ -41,79 +41,79 @@ public class Projectile {
     
     /*getters*/
 
-    public static String getType() {
+    public String getType() {
         return type;
     }
 
-    public static int getX() {
+    public int getX() {
         return x;
     }
 
-    public static int getY() {
+    public int getY() {
         return y;
     }
 
-    public static int getVitessex() {
+    public int getVitessex() {
         return vitessex;
     }
 
-    public static int getVitessey() {
+    public int getVitessey() {
         return vitessey;
     }
 
-    public static int getHauteur() {
+    public int getHauteur() {
         return hauteur;
     }
 
-    public static int getLargeur() {
+    public int getLargeur() {
         return largeur;
     }
 
-    public static int getNumero_lanceur() {
+    public int getNumero_lanceur() {
         return numero_lanceur;
     }
 
-    public static long getNaissance() {
+    public long getNaissance() {
         return naissance;
     }
     
     
     /*setter*/
 
-    public static void setType(String type) {
-        Projectile.type = type;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public static void setX(int x) {
-        Projectile.x = x;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public static void setY(int y) {
-        Projectile.y = y;
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public static void setVitessex(int vitessex) {
-        Projectile.vitessex = vitessex;
+    public void setVitessex(int vitessex) {
+        this.vitessex = vitessex;
     }
 
-    public static void setVitessey(int vitessey) {
-        Projectile.vitessey = vitessey;
+    public void setVitessey(int vitessey) {
+        this.vitessey = vitessey;
     }
 
-    public static void setHauteur(int hauteur) {
-        Projectile.hauteur = hauteur;
+    public void setHauteur(int hauteur) {
+        this.hauteur = hauteur;
     }
 
-    public static void setLargeur(int largeur) {
-        Projectile.largeur = largeur;
+    public void setLargeur(int largeur) {
+        this.largeur = largeur;
     }
 
-    public static void setNumero_lanceur(int numero_lanceur) {
-        Projectile.numero_lanceur = numero_lanceur;
+    public void setNumero_lanceur(int numero_lanceur) {
+        this.numero_lanceur = numero_lanceur;
     }
 
-    public static void setNaissance(long naissance) {
-        Projectile.naissance = naissance;
+    public void setNaissance(long naissance) {
+        this.naissance = naissance;
     }
     
     
@@ -160,8 +160,8 @@ public class Projectile {
         
         String type = this.getType();
         
-        if (type == "Couteau"){
-            
+        if (type == "Couteau" && System.currentTimeMillis()-25> this.getNaissance()){
+            EstPerime = true;
         }
         
         
