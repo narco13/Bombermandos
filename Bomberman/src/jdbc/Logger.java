@@ -175,7 +175,7 @@ public class Logger extends javax.swing.JFrame {
                 dispose();
                 int ID = BaseVide.AjouterJoueur(PseudoUtilisateur);
                 if(ID != -1){
-                    String[] arguments = new String[] {""+ID};
+                    String[] arguments = new String[] {""+ID,PseudoUtilisateur};
                     Main.main(arguments);
                 }
                 
@@ -206,7 +206,7 @@ public class Logger extends javax.swing.JFrame {
                 dispose();
                 int ID = BaseVide.AjouterJoueur(PseudoUtilisateur);
                 if(ID != -1){
-                    String[] arguments = new String[] {""+ID};
+                    String[] arguments = new String[] {""+ID,PseudoUtilisateur};
                     Main.main(arguments);
                 }
                 
