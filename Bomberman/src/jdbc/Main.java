@@ -27,9 +27,10 @@ public class Main extends javax.swing.JFrame {
     private BufferedImage buffer;
     private Graphics2D contexteBuffer;
     public static ListeMur Murs=new ListeMur();
+    public static ListeProjectiles Projectiles = new ListeProjectiles();
     private Jeu jeu;
-    public static int largeurPersos=30;
-    public static int hauteurPersos=30;
+    public static int largeurPersos=25;
+    public static int hauteurPersos=40;
 
     /**
      * Creates new form Main
@@ -92,9 +93,9 @@ public class Main extends javax.swing.JFrame {
         // initialisation
         System.out.println("Main lancé! Argument reçu: ID ="+args[0]);
         ID = parseInt(args[0]);
-        Moi.setPseudo(""+args[1]);
+        Moi.setPseudo(args[1]);
         Moi.setId(ID);
-        
+        Moi.Pull(ID);
         Adversaires.InitBaseAdversaires(ID);
         
         
@@ -115,7 +116,7 @@ public class Main extends javax.swing.JFrame {
         Murs.add(new Mur(0,0,577,30));
         Murs.add(new Mur(0,0,30,350));
         Murs.add(new Mur(547,0,577,350));
-        Murs.add(new Mur(0,350,577,380));
+        Murs.add(new Mur(0,310,577,350));
         
         
     }
