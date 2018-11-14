@@ -217,12 +217,16 @@ public class Main extends javax.swing.JFrame {
         });
 
         jTextField1.setText("jTextField1");
+        jTextField1.setEnabled(false);
 
         jTextField2.setText("jTextField2");
+        jTextField2.setEnabled(false);
 
         jTextField3.setText("jTextField3");
+        jTextField3.setEnabled(false);
 
         jTextField4.setText("jTextField4");
+        jTextField4.setEnabled(false);
 
         jLabel2.setText("jLabel2");
 
