@@ -115,7 +115,7 @@ public class Main extends javax.swing.JFrame {
         Murs.add(new Mur(0,0,577,30));
         Murs.add(new Mur(0,0,30,350));
         Murs.add(new Mur(547,0,577,350));
-        Murs.add(new Mur(0,0,30,577));
+        Murs.add(new Mur(0,350,577,380));
         
         
     }

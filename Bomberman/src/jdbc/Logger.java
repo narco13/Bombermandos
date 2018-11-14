@@ -166,7 +166,7 @@ public class Logger extends javax.swing.JFrame {
         
         BaseJoueur BaseVide = new BaseJoueur();
         
-        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>19){
+        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>15){
             jLabel3.setText("Pseudo incorrect.");
         }
         else{
@@ -197,7 +197,7 @@ public class Logger extends javax.swing.JFrame {
             String MotdepasseUtilisateur = jPasswordField1.getText();
         String PseudoUtilisateur = jTextField1.getText();
         
-        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>19){
+        if ( PseudoUtilisateur.equals("") || PseudoUtilisateur.equals("Libre") || PseudoUtilisateur.length()>15){
             jLabel3.setText("Pseudo incorrect.");
         }
         else{
