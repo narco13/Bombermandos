@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import static jdbc.Main.Adversaires;
+import static jdbc.Main.Murs;
 import static jdbc.Main.hauteurPersos;
 import static jdbc.Main.largeurPersos;
 
@@ -214,6 +215,11 @@ public class Joueur {
         
         if (Adversaires.joueur3.getX()+largeurPersos>x && Adversaires.joueur3.getX()-largeurPersos<x && Adversaires.joueur3.getY()+hauteurPersos>y && Adversaires.joueur3.getY()-hauteurPersos<y){
             estoccupee = true;
+        }
+        
+        if (Murs.estDansMur(x,y)){
+            estoccupee = true;
+            
         }
         
         return estoccupee;

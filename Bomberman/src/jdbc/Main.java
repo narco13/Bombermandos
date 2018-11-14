@@ -22,10 +22,11 @@ import javax.swing.ImageIcon;
 public class Main extends javax.swing.JFrame {
     
     public static int ID;
-    public static Joueur Moi=new Joueur(0,"erreur",1,1,1,"cut",1,1,1);
+    public static Joueur Moi=new Joueur(0,"erreur",300,300,1,"cut",1,1,1);
     public static BaseJoueur Adversaires = new BaseJoueur();
     private BufferedImage buffer;
     private Graphics2D contexteBuffer;
+    public static ListeMur Murs=new ListeMur();
     private Jeu jeu;
     public static int largeurPersos=30;
     public static int hauteurPersos=30;
@@ -91,7 +92,7 @@ public class Main extends javax.swing.JFrame {
         // initialisation
         System.out.println("Main lancé! Argument reçu: ID ="+args[0]);
         ID = parseInt(args[0]);
-        
+        Moi.setPseudo(""+args[1]);
         Moi.setId(ID);
         
         Adversaires.InitBaseAdversaires(ID);
@@ -110,6 +111,12 @@ public class Main extends javax.swing.JFrame {
         
         
         tache.start(); // lancement de la boucle infinie
+        
+        Murs.add(new Mur(0,0,577,30));
+        Murs.add(new Mur(0,0,30,350));
+        Murs.add(new Mur(547,0,577,350));
+        Murs.add(new Mur(0,0,30,577));
+        
         
     }
         public void MAJHUD(){
