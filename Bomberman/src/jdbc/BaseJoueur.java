@@ -26,21 +26,65 @@ public class BaseJoueur {
         try {
                 Connection connexion = DriverManager.getConnection("jdbc:mysql://nemrod.ens2m.fr:3306/20182019_s1_vs2_tp1_bomberman?serverTimezone=UTC", "tutur", "bomberman");
 
-                PreparedStatement requete = connexion.prepareStatement("UPDATE Joueur SET x = ?, y = ?, pv = ?, arme = ?, direction = ?, etat = ?, munitions =?,pseudo=? ");
-                requete.setInt(1,1);
-                requete.setInt(2,1);
+                PreparedStatement requete = connexion.prepareStatement("UPDATE Joueur SET x = ?, y = ?, pv = ?, arme = ?, direction = ?, etat = ?, munitions =?,pseudo=? WHERE id =?");
+                requete.setInt(1,50);
+                requete.setInt(2,50);
                 requete.setInt(3,1);
                 requete.setString(4, "aucune");
                 requete.setInt(5,1);
                 requete.setInt(6,-1);
                 requete.setInt(7,1);
                 requete.setString(8,"Libre");
-                
-                
-                
+                requete.setInt(9,1);
                 
                 
                 requete.executeUpdate();
+                
+                PreparedStatement requete2 = connexion.prepareStatement("UPDATE Joueur SET x = ?, y = ?, pv = ?, arme = ?, direction = ?, etat = ?, munitions =?,pseudo=? WHERE id =?");
+                requete2.setInt(1,200);
+                requete2.setInt(2,50);
+                requete2.setInt(3,1);
+                requete2.setString(4, "aucune");
+                requete2.setInt(5,1);
+                requete2.setInt(6,-1);
+                requete2.setInt(7,1);
+                requete2.setString(8,"Libre");
+                requete2.setInt(9,2);
+                
+                
+                requete2.executeUpdate();
+                
+                PreparedStatement requete3 = connexion.prepareStatement("UPDATE Joueur SET x = ?, y = ?, pv = ?, arme = ?, direction = ?, etat = ?, munitions =?,pseudo=? WHERE id =?");
+                requete3.setInt(1,50);
+                requete3.setInt(2,200);
+                requete3.setInt(3,1);
+                requete3.setString(4, "aucune");
+                requete3.setInt(5,1);
+                requete3.setInt(6,-1);
+                requete3.setInt(7,1);
+                requete3.setString(8,"Libre");
+                requete3.setInt(9,3);
+                
+                
+                requete3.executeUpdate();
+                
+                PreparedStatement requete4 = connexion.prepareStatement("UPDATE Joueur SET x = ?, y = ?, pv = ?, arme = ?, direction = ?, etat = ?, munitions =?,pseudo=? WHERE id =?");
+                requete4.setInt(1,200);
+                requete4.setInt(2,200);
+                requete4.setInt(3,1);
+                requete4.setString(4, "aucune");
+                requete4.setInt(5,1);
+                requete4.setInt(6,-1);
+                requete4.setInt(7,1);
+                requete4.setString(8,"Libre");
+                requete4.setInt(9,4);
+                
+                
+                requete4.executeUpdate();
+                
+                
+                
+                
 
                 requete.close();
                 connexion.close();
